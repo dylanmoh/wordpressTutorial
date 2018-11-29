@@ -14,7 +14,7 @@ function dashboardInit() {
 }
 
 </script>
-<h1>Create a new domain</h1>
+<h1 class="step-title">Create a new domain</h1>
 <div class="tutorial-images">
 	<p class="image-instructions">CLICK "Wordpress" under Applications</p>
 	<p class="image-url"><?php echo get_attachment_url_by_slug('step4-1'); ?></p>
@@ -35,7 +35,7 @@ function dashboardInit() {
 		<div id="tutorial"></div>
 		<form method="post" action="<?php echo 'https://' . $userinfo['domain'] . '.com/blog'; ?>">
 			<h2>You're Done! Proceed to your new site!</h2>
-			<button type="submit" value="click" name="submit">Continue to your site</button>
+			<button class="button" type="submit" value="click" name="submit">Continue to your site</button>
 		</form>
 	</div>
 	<div id="loading" style="background-image: url(<?php echo get_attachment_url_by_slug('loading'); ?>)"></div>

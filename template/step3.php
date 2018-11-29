@@ -16,7 +16,7 @@ function dashboardInit() {
 }
 
 </script>
-<h1>Create a new domain</h1>
+<h1 class="step-title">Create a new domain</h1>
 <div class="tutorial-images">
 	<p class="image-instructions">INPUT "<?php echo $userinfo['domain']; ?>" into the textbox and CLICK check availability. If requested domain is available, CLICK continue.</p>
 	<p class="image-url"><?php echo get_attachment_url_by_slug('step3-1'); ?></p>
@@ -36,7 +36,7 @@ function dashboardInit() {
 				<input type="hidden" name="username" value="<?php echo $userinfo['admin'] ?>" />
 				<input type="hidden" name="password" value="<?php echo $userinfo['password'] ?>" />
 			<h2>Proceed to Step 4</h2>
-			<button type="submit" value="click" name="submit">Continue to Step 4</button>
+			<button class="button" type="submit" value="click" name="submit">Continue to Step 4</button>
 		</form>
 	</div>
 	<div id="loading" style="background-image: url(<?php echo get_attachment_url_by_slug('loading'); ?>)"></div>

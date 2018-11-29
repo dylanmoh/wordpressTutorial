@@ -9,7 +9,7 @@ function dashboardInit() {
 }
 
 </script>
-<h1>Explanation </h1>
+<h1 class="step-title">Explanation </h1>
 <div class="tutorial-images">
 	<p class="image-instructions">Here's the first instruction, with associated image!</p>
 	<p class="image-url"><?php echo get_attachment_url_by_slug('step3-1'); ?></p>
@@ -26,7 +26,7 @@ function dashboardInit() {
 		<div id="tutorial"></div>
 		<form method="post" action="<?php echo get_site_url() . '/step1'; ?>">
 			<h2>Proceed to Step 1</h2>
-			<button type="submit" value="click" name="submit">Continue to Step 1</button>
+			<button class="button" type="submit" value="click" name="submit">Continue to Step 1</button>
 		</form>
 	</div>
 	<div id="loading" style="background-image: url(<?php echo get_attachment_url_by_slug('loading'); ?>)"></div>

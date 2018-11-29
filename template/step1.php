@@ -5,7 +5,7 @@ get_header();
 <script>
 
 </script>
-<h1>Login to BYU CAS</h1>
+<h1 class="step-title">Login to BYU CAS</h1>
 <div class="tutorial-images">
 	<p class="image-instructions">Login to BYU CAS. Once the page looks like the image on the left, go ahead and close the login page and hit next</p>
 	<p class="image-url"><?php echo get_attachment_url_by_slug('step1-1'); ?></p>
@@ -18,10 +18,10 @@ get_header();
 		<div id="tutorial"></div>
 		<form method="post" action="<?php echo get_site_url() . '/step2'; ?>">
 			<h2>Proceed to Step 2</h2>
-			<button type="submit" value="click" name="submit">Continue to Step 2</button>
+			<button class="button" type="submit" value="click" name="submit">Continue to Step 2</button>
 		</form>
 	</div>
-	<div id="dashboard"><a href="https://cas.byu.edu/cas/login" target="_blank">Open Login page</a></div>
+	<div id="dashboard"><a href="https://cas.byu.edu/cas/login" target="_blank"><span class="button">Open Login page</span></a></div>
 </div>
 <script>
 let imageIndex = 0;

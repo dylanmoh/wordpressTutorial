@@ -1,5 +1,62 @@
+h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+	font-size: 40px;
+    font-weight: 500;
+    color: #07a;
+    text-align: center;
+}
+
 h2 {
+	font-size: 20px;
+    padding: 0 10px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.step-title {
+	margin: 20px;
+    font-size: 50px;
+}
+
+#content {
 	padding: 0;
+}
+
+.button {
+	background: #07a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5%;
+    border: solid 1px #000;
+}
+
+.button:hover {
+	background: #09c;
+}
+
+.front-wrap {
+	position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #eee;
+    text-align: center;
+}
+
+.front-title {
+	transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 550px;
+    text-align: center;
+}
+
+.front-title h1 {
+	margin-bottom: 20px;
 }
 
 .info-form {
@@ -12,6 +69,14 @@ h2 {
 	min-height: 444px
 }
 
+#dashboard {
+	text-align: center;
+}
+
+.info-form {
+	padding: 0 80px;
+}
+
 #loading {
 	background-repeat: no-repeat;
 }
@@ -21,19 +86,42 @@ h2 {
     grid-template-columns: 50% 50%;
 }
 
+.collect-form p, .collect-form span {
+	text-align: center;
+	line-height: 40px
+}
+
 .tutorial-grid form {
 	display: none;
 }
 
+.info-form span {
+	padding-right: 12px;
+}
+
+.info-form span, .info-form input {
+	margin-top: 15px;
+}
+
 #tutorial {
-	background-color: gray;
+    background: #eee;
+   	border-right: solid 1px #aaa;
 	background-size: contain;
 	background-repeat: no-repeat;
 	height: 100%;
 }
 
+#dashboard .button {
+	position: relative;
+    top: 30px;
+}
+
 .tutorial-images {
 	display: none;
+}
+
+form {
+	text-align: center;
 }
 
 .instructions-wrap {
@@ -42,13 +130,18 @@ h2 {
     padding: 30px 70px;
     grid-column: 1 / 3;
     position: relative;
+    border-top: solid 1px #aaa;
 }
 
 .grid-title {
 	border: solid 1px #aaa;
-	background-color: gray;
-}
+	border-left: none;
+    background: #eee;
+	font-size: 23px;
+    text-align: center;
+    color: #07a;
 
+}
 
 .right {
 	right: 0;
@@ -84,4 +177,5 @@ h2 {
     font-size: 20px;
     height: 100%;
     line-height: 85px;
+    padding: 0 8px;
 }
