@@ -1,0 +1,87 @@
+h2 {
+	padding: 0;
+}
+
+.info-form {
+	display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#dashboard, #loading {
+	width: 100%;
+	min-height: 444px
+}
+
+#loading {
+	background-repeat: no-repeat;
+}
+
+.tutorial-grid {
+	display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.tutorial-grid form {
+	display: none;
+}
+
+#tutorial {
+	background-color: gray;
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+.tutorial-images {
+	display: none;
+}
+
+.instructions-wrap {
+	display: block;
+    text-align: center;
+    padding: 30px 70px;
+    grid-column: 1 / 3;
+    position: relative;
+}
+
+.grid-title {
+	border: solid 1px #aaa;
+	background-color: gray;
+}
+
+
+.right {
+	right: 0;
+}
+
+.right .next-text {
+	box-shadow: inset -100px 0px 100px -50px #aaa;
+	text-align: right;
+}
+
+.left {
+	left: 0;
+}
+
+.left .next-text {
+	box-shadow: inset 100px 0px 100px -50px #aaa;
+	text-align: left;
+}
+
+.next-button {
+	top: 0;
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    padding: 0;
+}
+
+.next-text {
+	display: block;
+	font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 20px;
+    height: 100%;
+    line-height: 85px;
+}
