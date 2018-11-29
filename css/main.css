@@ -3,6 +3,14 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
+#content {
+	padding-bottom: 0 !important;
+}
+
+#colophon {
+	display: none;
+}
+
 h1 {
 	font-size: 40px;
     font-weight: 500;
@@ -79,6 +87,7 @@ h2 {
 
 #loading {
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .tutorial-grid {

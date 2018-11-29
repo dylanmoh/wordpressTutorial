@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Example */ 
+/* Template Name: Step1 */ 
 get_header();
 ?>
 <script>
