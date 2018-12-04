@@ -6,73 +6,89 @@ get_header();
 function dashboardInit() {
 	$('#dashboard').show();
 	$('#loading').hide();
+	$('.loading--example').html("<h1 class="step-title">You're Good to Go</h1>");
 }
 
 </script>
 <h1 class="step-title">Explanation </h1>
-<div class="tutorial-images">
-	<p class="image-instructions">Here's the first instruction, with associated image!</p>
-	<p class="image-url"><?php echo get_attachment_url_by_slug('step3-1'); ?></p>
-	<p class="image-instructions">Here's the second instruction, with associated image!</p>
-	<p class="image-url"><?php echo get_attachment_url_by_slug('step3-2'); ?></p>
-</div>
 <div class="tutorial-grid">
-	<h2>Image references will be on the LEFT</h2>
-	<h2>Interactions with BYU Domains will be on the RIGHT</h2>
-	<div class='instructions-wrap'><span id="instructions"></span><div class="left next-button"><span class="next-text">Back</span></div><div class="right next-button"><span class="next-text">Next</span></div></div>
-	<span class="grid-title">Tutorial</span>
-	<span class="grid-title">BYU Domains</span>
-	<div>
-		<div id="tutorial"></div>
-		<form method="post" action="<?php echo get_site_url() . '/step1'; ?>">
-			<h2>Proceed to Step 1</h2>
-			<button class="button" type="submit" value="click" name="submit">Continue to Step 1</button>
-		</form>
+	<div class='instructions-wrap'>
+		<span id="instructions">
+		<!-- Options here -->
+			<div class="image-instructions">Here's an example instruction: click Next to move on</div>
+			<div class="image-instructions">Here's an example instruction: click Hint for a hint, then click next</div>
+			<div class="image-instructions">
+				<form method="post" action="<?php echo get_site_url() . '/step1'; ?>">
+					<h2>Proceed to Step 1</h2>
+					<button class="button" type="submit" value="click" name="submit">Continue to Step 1</button>
+				</form>
+			</div>
+		<!-- End Options here -->
+		</span>
+		<div id="left" class="left next-button"><span class="next-text">Back</span></div>
+		<div id="right" class="right next-button"><span class="next-text">Next</span></div>
+	</div>
+	<span class="grid-title"><span class="hint">Hint?</span></span>
+	<div class="image-wrap">
+		<div id="tutorial">
+				<div class="image-url">	
+					<span>The Next button looks like this. Click anywhere to close Hint, and then click Next to move on</span>	
+					<div class="next-button--example right next-button"><span class="next-text">Next</span></div>
+				</div>
+				<div class="image-url">	
+					<span>Sometimes BYU domains has trouble loading, refresh the page if the loading icon doesn't go away</span>	
+					<div class="loading--example" style="background-image: url(<?php echo get_attachment_url_by_slug('loading'); ?>)"></div>
+				</div>
+		</div>
 	</div>
 	<div id="loading" style="background-image: url(<?php echo get_attachment_url_by_slug('loading'); ?>)"></div>
 	<iframe onload="dashboardInit()" id="dashboard" src="https://domains.byu.edu/dashboard/#domains-header"></iframe>
 </div>
 <script>
 let imageIndex = 0;
-let tutorial = $('#tutorial');
-let tutorialInstructions = $('#instructions');
-let form = $('.tutorial-grid form');
-let instructions = $('.tutorial-images').find('.image-instructions');
-let images = $('.tutorial-images').find('.image-url');
+let tutorialImageDiv = $('#tutorial');
+let tutorialInstructions = $('.image-instructions');
+let images = $('.image-url');
+let wrap = $('.image-wrap');
+let hint = $('.hint');
 $('#dashboard').hide();
 $('.left').hide();
+wrap.hide();
 updateImage();
 function updateImage() {
-	if ( imageIndex >= images.length ) {
-		tutorial.hide();
-		form.show();
-		tutorialInstructions.html("Proceed to next step");
-	}
-	else {
-		tutorial.show();
-		tutorialInstructions.show();
-		form.hide();
-		tutorial.css("background-image", "url(" + images[imageIndex].innerText + ")");
-		tutorialInstructions.html(instructions[imageIndex].innerText);
-	}
-	
+		tutorialInstructions.hide();
+		$(tutorialInstructions[imageIndex]).show();
+		if (imageIndex == images.length) {
+			hint.hide();
+		}
+		else {
+			hint.show();
+			images.hide();
+			$(images[imageIndex]).show();
+		}
 }
 
-$('.right').click( function() {
+$('#right').click( function() {
 	imageIndex++;
 	if (imageIndex == images.length) {
-		$('.right').hide();
+		$('#right').hide();
 	}
-	$('.left').show();
+	$('#left').show();
 	updateImage();
 });
-$('.left').click( function() {
+$('#left').click( function() {
 	imageIndex--;
 	if (imageIndex == 0) {
-		$('.left').hide();
+		$('#left').hide();
 	}
-	$('.right').show();
+	$('#right').show();
 	updateImage();
+});
+hint.click(function () {
+	wrap.show();
+});
+wrap.click( function () {
+	wrap.hide();
 });
 </script>
 <?php get_footer();

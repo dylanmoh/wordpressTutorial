@@ -87,21 +87,17 @@ h2 {
 
 #loading {
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
+    background-position: center;
 }
 
 .tutorial-grid {
 	display: grid;
-    grid-template-columns: 50% 50%;
 }
 
 .collect-form p, .collect-form span {
 	text-align: center;
 	line-height: 40px
-}
-
-.tutorial-grid form {
-	display: none;
 }
 
 .info-form span {
@@ -112,11 +108,19 @@ h2 {
 	margin-top: 15px;
 }
 
+.image-wrap {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    padding: 130px;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
 #tutorial {
     background: #eee;
    	border-right: solid 1px #aaa;
-	background-size: contain;
-	background-repeat: no-repeat;
 	height: 100%;
 }
 
@@ -133,11 +137,43 @@ form {
 	text-align: center;
 }
 
+.image-instructions {
+    margin: 0;
+}
+
+.image-url .next-button--example {
+    left: 0;
+    height: 150px;
+    top: 150px;
+    margin: auto;
+}
+
+form .radio {
+    margin-top: 25px;
+}
+
+.image-url {
+    position: relative;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 50px;
+}
+
+.image--example {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#instructions p {
+    margin: 0;
+}
+
 .instructions-wrap {
 	display: block;
     text-align: center;
     padding: 30px 70px;
-    grid-column: 1 / 3;
     position: relative;
     border-top: solid 1px #aaa;
 }
@@ -149,7 +185,18 @@ form {
 	font-size: 23px;
     text-align: center;
     color: #07a;
+}
 
+.loading--example {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hint:hover {
+    cursor: pointer;
+    color: #0ae;
 }
 
 .right {
@@ -157,8 +204,14 @@ form {
 }
 
 .right .next-text {
-	box-shadow: inset -100px 0px 100px -50px #aaa;
+	box-shadow: inset -100px 0px 100px -50px #ccc;
+    color: #999;
 	text-align: right;
+}
+
+.right .next-text:hover {
+    box-shadow: inset -100px 0px 100px -50px #aaa;
+    color: #000;
 }
 
 .left {
@@ -166,8 +219,14 @@ form {
 }
 
 .left .next-text {
-	box-shadow: inset 100px 0px 100px -50px #aaa;
+	box-shadow: inset 100px 0px 100px -50px #ccc;
+    color: #999;
 	text-align: left;
+}
+
+.left .next-text:hover {
+    box-shadow: inset 100px 0px 100px -50px #aaa;
+    color: #000;
 }
 
 .next-button {
@@ -175,7 +234,7 @@ form {
     cursor: pointer;
     position: absolute;
     height: 100%;
-    width: 50%;
+    width: 30%;
     padding: 0;
 }
 
@@ -187,4 +246,131 @@ form {
     height: 100%;
     line-height: 85px;
     padding: 0 8px;
+}
+
+.domainoptions {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    vertical-align: baseline;
+    display: block;
+    color: #677483;
+    font: 13px "Open Sans", Arial, sans-serif;
+    line-height: 1.6em;
+}
+
+.option.optionselected {
+    background-color: #f2faff;
+}
+
+.option {
+    background-color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+    display: block;
+    font-size: 13px;
+    color: #677483;
+    font: 13px "Open Sans", Arial, sans-serif;
+    line-height: 1.6em;
+}
+
+.option:first-child {
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -o-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.option:last-child {
+    border-bottom: 0;
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -o-border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.option label {
+    padding: 0;
+    font-size: 1em;
+    line-height: 14px;
+    width: auto;
+    text-align: left;
+    float: none;
+    display: inline;
+    font-weight: bold;
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+    color: #677483;
+    font: 13px "Open Sans", Arial, sans-serif;
+}
+
+.domainreginput {
+    display: block;
+        margin: 0;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+        border: 0;
+    vertical-align: baseline;
+    color: #677483;
+    font: 13px "Open Sans", Arial, sans-serif;
+    line-height: 1.6em;
+    justify-content: center;
+}
+
+.domainreginput input {
+    width: auto;
+    padding: 6px 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 2px rgba(255,255,255,.1), inset 1px 2px 0 rgba(207,211,218,.15);
+    border: 1px solid #bbcad1;
+    transition: box-shadow 0.3s;
+    color: #828f9e;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin: 0;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 18px;
+    height: 100%;
+}
+
+#registertld {
+    height: 30px;
+}
+
+#registertld option {
+        font: 14px Helvetica, Arial;
+    text-indent: 5px;
+    max-width: 100% !important;
+    float: left;
+    white-space: nowrap;
+        line-height: 15px !important;
+        margin: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+.domainreginput .btn-primary {
+    width: auto;
+    height: auto;
+        border: 1px solid #007597;
+    background-color: #008db5 !important;
+    border-radius: 5px;
+    padding: 12px 13px !important;
+    font-family: "Oxygen", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
 }
