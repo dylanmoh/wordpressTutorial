@@ -113,7 +113,7 @@ h2 {
     height: 100%;
     width: 100%;
     top: 0;
-    padding: 130px;
+    padding: 50px 130px;
     background: rgba(0,0,0,0.5);
     cursor: pointer;
 }

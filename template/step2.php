@@ -74,7 +74,7 @@ function validateForm() {
 	}
 	else {
 		if (!f) {
-			$('.collect-form')[0].action = document.location.origin + '/step4'
+			$('.collect-form')[0].action = window.location.href.slice(0, -1) + 4;
 		}
 	}
 }
