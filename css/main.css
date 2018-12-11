@@ -12,6 +12,23 @@ h1, h2, h3, h4 {
 
 }
 
+#tutorial {
+    z-index: 1000;
+}
+
+.explain1-1 {
+        position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 100px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
 ::placeholder {
     color: #888;
     opacity: 0.8;
