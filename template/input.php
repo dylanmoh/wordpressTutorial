@@ -8,13 +8,6 @@ get_header();
 		<span id="instructions">
 		<!-- Options here -->
 			<form class="collect-form" method="post" action="<?php echo get_site_url() . '/register'; ?>">
-				<div class="image-instructions">
-					<div class="info-form">
-						<span>Domain Name:</span><input class="domain" type="text" name="domain" placeholder="mywebsitename" />
-						<span>Admin Username:</span><input class="username" type="text" name="username" placeholder="username" />
-						<span>Admin Password:</span><input class="password" type="text" name="password" placeholder="password" />
-					</div>
-				</div>
 				<div class="image-instructions" style="display: grid; grid-template-columns: 50% 50%;">
 					<h2>If this is your first BYU domain website</h2>
 					<h2>If you already have a BYU domain</h2>
@@ -31,8 +24,8 @@ get_header();
 	<div class="image-wrap">
 		<div id="tutorial">
 				<div class="image-url">	
-					<div>Domain is the name you want for your site</div>
-					<div>Username and Password will be the admin account for Wordpress</div>	
+					<div>If you are unsure which option to choose, then this is most likely your first domain. Please create a domain</div>
+					<div class="image--example" style="background-image: url('<?php echo get_attachment_url_by_slug('step2-2'); ?>');"></div>
 				</div>
 		</div>
 	</div>
@@ -48,10 +41,11 @@ $('#dashboard').hide();
 $('.left').hide();
 wrap.hide();
 updateImage();
+$(".right").hide();
 function updateImage() {
 		tutorialInstructions.hide();
 		$(tutorialInstructions[imageIndex]).show();
-		if (imageIndex == images.length) {
+		if (imageIndex == images.length + 1) {
 			hint.hide();
 		}
 		else {
@@ -61,39 +55,28 @@ function updateImage() {
 		}
 }
 
-function validateForm() {
-	let d = $('.domain')[0].value;
-	let u = $('.username')[0].value;
-	let p = $('.password')[0].value;
-	if (d === "" || u === "" || p === "" ) {
-		alert("All areas must be filled out");
-		return false;
-	}
-	return true;
-}
-
 $('#secondForm').click(function(e) {
 	$('.collect-form')[0].action = 'http://wordpresstutorial.courtneypoulsen.com/blog/install/';
 })
 
-$('#right').click( function() {
-	if (validateForm()) {
-		imageIndex++;
-		if (imageIndex == images.length) {
-			$('#right').hide();
-		}
-		$('#left').show();
-		updateImage();
-	}
-});
-$('#left').click( function() {
-	imageIndex--;
-	if (imageIndex == 0) {
-		$('#left').hide();
-	}
-	$('#right').show();
-	updateImage();
-});
+// $('#right').click( function() {
+// 	if (validateForm()) {
+// 		imageIndex++;
+// 		if (imageIndex == images.length) {
+// 			$('#right').hide();
+// 		}
+// 		$('#left').show();
+// 		updateImage();
+// 	}
+// });
+// $('#left').click( function() {
+// 	imageIndex--;
+// 	if (imageIndex == 0) {
+// 		$('#left').hide();
+// 	}
+// 	$('#right').show();
+// 	updateImage();
+// });
 hint.click(function () {
 	wrap.show();
 });

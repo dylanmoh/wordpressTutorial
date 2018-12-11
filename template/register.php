@@ -1,11 +1,6 @@
 <?php
 /* Template Name: register */ 
 get_header();
-$userinfo = array(
-	'domain' => $_POST['domain'],
-	'admin' => $_POST['username'],
-	'password' => $_POST['password'],
-);
 ?>
 <script>
 function dashboardInit() {
@@ -21,7 +16,7 @@ function dashboardInit() {
 		<span id="instructions">
 		<!-- Options here -->
 			<div class="image-instructions">
-				<div>INPUT "<?php echo $userinfo['domain']; ?>" into the textbox and CLICK check availability.</div>
+				<div>INPUT your desired domain name into the textbox and CLICK check availability.</div>
 				<div>If the requested domain is available, CLICK continue.</div>
 			</div>
 			<div class="image-instructions">REVIEW the information and CLICK on "Register Now"</div>
@@ -30,13 +25,13 @@ function dashboardInit() {
 			<div class="image-instructions">CLICK "Install this application"</div>
 			<div class="image-instructions">
 				<div>SCROLL down until you reach Settings</div>
-				<div>INPUT "<?php echo $userinfo['admin']; ?>" under Administrator Username.</div>
-				<div>INPUT "<?php echo $userinfo['password']; ?>" under Administrator Password.</div>
+				<div>INPUT a username under Administrator Username.</div>
+				<div>INPUT a password under Administrator Password.</div>
 			</div>
 			<div class="image-instructions">SCROLL to the bottom and CLICK install</div>
 			<div class="image-instructions">Wait for the install to reach 100%</div>
 			<div class="image-instructions">
-				<form method="post" action="<?php echo 'https://' . $userinfo['domain'] . '.com/blog'; ?>">
+				<form method="post" action="<?php echo 'https://courtneypoulsen.com/blog'; ?>">
 					<h2>You're Done! Proceed to your new site!</h2>
 					<button class="button" type="submit" value="click" name="submit">Continue to your site</button>
 				</form>

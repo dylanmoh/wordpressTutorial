@@ -1,11 +1,6 @@
 <?php
 /* Template Name: install */ 
 get_header();
-$userinfo = array(
-	'domain' => $_POST['domain'],
-	'admin' => $_POST['username'],
-	'password' => $_POST['password'],
-);
 ?>
 <script>
 function dashboardInit() {
@@ -15,7 +10,7 @@ function dashboardInit() {
 }
 
 </script>
-<h1 class="step-title">Step 4: Install Wordpress</h1>
+<h1 class="step-title">Install Wordpress</h1>
 <div class="tutorial-grid">
 	<div class='instructions-wrap'>
 		<span id="instructions">
@@ -24,13 +19,13 @@ function dashboardInit() {
 			<div class="image-instructions">CLICK "Install this application"</div>
 			<div class="image-instructions">
 				<div>SCROLL down until you reach Settings</div>
-				<div>INPUT "<?php echo $userinfo['admin']; ?>" under Administrator Username.</div>
-				<div>INPUT "<?php echo $userinfo['password']; ?>" under Administrator Password.</div>
+				<div>INPUT a username under Administrator Username.</div>
+				<div>INPUT a password under Administrator Password.</div>
 			</div>
 			<div class="image-instructions">SCROLL to the bottom and CLICK install</div>
 			<div class="image-instructions">Wait for the install to reach 100%</div>
 			<div class="image-instructions">
-				<form method="post" action="<?php echo 'https://' . $userinfo['domain'] . '.com/blog'; ?>">
+				<form method="post" action="<?php echo 'https://courtneypoulsen.com/blog'; ?>">
 					<h2>You're Done! Proceed to your new site!</h2>
 					<button class="button" type="submit" value="click" name="submit">Continue to your site</button>
 				</form>
