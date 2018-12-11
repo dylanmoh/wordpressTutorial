@@ -3,6 +3,20 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
+.float-click {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: rgba(255, 255, 0, 0.4);
+    pointer-events: none;
+
+}
+
+::placeholder {
+    color: #888;
+    opacity: 0.8;
+}
+
 #content {
 	padding-bottom: 0 !important;
 }
@@ -79,6 +93,7 @@ h2 {
 
 #dashboard {
 	text-align: center;
+    height: 2000px;
 }
 
 .info-form {
@@ -373,4 +388,9 @@ form .radio {
     font-weight: 700;
     font-size: 16px;
     color: #fff;
+}
+
+.iframe-wrap {
+    overflow: hidden;
+        height: calc(100vh - 231px);
 }
