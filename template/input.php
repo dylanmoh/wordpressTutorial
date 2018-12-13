@@ -20,7 +20,7 @@ get_header();
 		<div id="left" style="width: 13%;" class="left next-button"><span class="next-text">Back</span></div>
 		<div id="right" class="right next-button"><span class="next-text">Next</span></div>
 	</div>
-	<span class="grid-title"><span class="hint">Hint?</span></span>
+	<span class="grid-title"><span class="hint">Help</span></span>
 	<div class="image-wrap">
 		<div id="tutorial">
 				<div class="image-url">	
