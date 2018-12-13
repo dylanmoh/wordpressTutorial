@@ -1,12 +1,6 @@
 <?php
 /* Template Name: install */ 
 get_header();
-if (!empty($_POST['domain'])) {
-	$newURL = 'http://' . $_POST['domain'] . '.com/blog/';
-	header('Location: '. $newURL);
-	echo $newURL;
-	exit();
-}
 ?>
 <script>
 function dashboardInit() {
@@ -36,7 +30,7 @@ function dashboardInit() {
 				<div>Wait for the install to finish</div>
 			</div>
 			<div class="image-instructions">
-				<form method="post" action="<?php echo get_permalink(); ?>">
+				<form class="link-form" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return newSite()" target="_blank">
 					<div>Enter your domain name</div>
 					<div style="margin-bottom: 10px;"><input name="domain" placeholder="example"></div>
 					<button class="button" type="submit" value="click" name="submit">Continue to your site</button>
@@ -152,5 +146,8 @@ $('.instructions-wrap').click( function () {
 $('#loading').click( function () {
 	wrap.hide();
 });
+function newSite() {
+	$('.link-form')[0].action = ('http://' + $('input')[0].value + '.com/blog/');
+}
 </script>
 <?php get_footer();
