@@ -15,7 +15,7 @@ function dashboardInit() {
 }
 
 </script>
-<h1 class="step-title">Creating a New Domain</h1>
+<h1 class="step-title">Installing Wordpress</h1>
 <div class="tutorial-grid">
 	<div class='instructions-wrap'>
 		<span id="instructions">
