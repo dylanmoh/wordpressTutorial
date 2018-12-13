@@ -3,6 +3,206 @@ h1, h2, h3, h4 {
     margin: 0;
 }
 
+#dashboard {
+    min-height: calc((100vh - 231px) + 125px);
+    margin-top: -125px;
+    margin-bottom: 0;
+}
+
+#dashboard.dashboard--extra {
+    margin-top: -454px;
+}
+
+.help--explanation-1 {
+    left: calc(100% - 43px);
+    top: 96px;
+    height: 134px;
+    width: 43px;
+}
+
+.help--explanation-1 .help-text {
+    width: 120px;
+    left: -117px;
+    top: -50px;
+}
+
+.help--explanation-2 {
+        width: 100%;
+    height: calc(100% - 256px);
+    top: 256px;
+}
+
+.help--explanation-2 .help-text {
+    top: -10px;
+}
+
+.help--input-1 {
+    width: calc(50% - 70px);
+    height: 200px;
+    top: 80px;
+    left: 70px;
+}
+
+.help--input-1 .help-text {
+    top: 200px;
+}
+
+.help--input-2 {
+    width: calc(50% - 70px);
+    height: 200px;
+    top: 80px;
+    left: calc(50%);
+}
+
+.help--input-2 .help-text {
+    top: 200px;
+}
+
+.help--register-1 {
+    top: 440px;
+    height: 60px;
+    left: calc(50% - 263px);
+    width: 280px;
+}
+
+.help--register-1 .help-text {
+    top: 60px;
+}
+
+.help--register-2 {
+    top: 435px;
+    height: 70px;
+    left: calc(50% + 80px);
+    width: 230px;
+}
+
+.help--register-2 .help-text {
+    top: 75px;
+}
+
+.help--register-3 {
+    top: 520px;
+    height: 70px;
+    left: calc(50% - (150px / 2));
+    width: 150px;
+}
+
+.help--register-3 .help-text {
+    left: calc(100% + 10px);
+    width: 150px;
+}
+
+
+.help--register-4 {
+    left: 0;
+    top: 96px;
+    height: 115px;
+    width: 43px;
+}
+
+.help--register-4 .help-text {
+    width: 120px;
+    left: 43px;
+    top: -10px;
+}
+
+.help--register-5 {
+    top: 510px;
+    height: 90px;
+    left: calc(50% - 20px);
+    width: 150px;
+}
+
+.help--register-5 .help-text {
+    left: calc(100% + 10px);
+    width: 150px;
+    top: -30px;
+}
+
+.help--install-1 {
+    top: 385px;
+    height: 70px;
+    left: 50px;
+    width: 200px;
+}
+
+.help--install-1 .help-text {
+    left: calc(100% + 10px);
+    width: 150px;
+}
+
+.help--install-2 {
+    top: 460px;
+    height: 80px;
+    left: calc(100% - 265px);
+    width: 238px;
+}
+
+.help--install-2 .help-text {
+    left: -110px;
+    width: 100px;
+}
+
+.help--install-3 {
+    width: 100%;
+    height: calc(100% - 231px);
+    top: 231px;
+}
+
+.help--install-3 .help-text {
+    top: -30px;
+    width: 150px;
+}
+
+.help--install-4 {
+    left: calc(100% - 43px);
+    top: 96px;
+    height: 115px;
+    width: 43px;
+}
+
+.help--install-4 .help-text {
+    width: 120px;
+    left: -128px;
+    top: -35px;
+}
+
+.help--install-5 {
+    height: 40px;
+    left: calc(100% - 107px);
+    width: 107px;
+    bottom: 189px;
+}
+
+.help--install-5 .help-text {
+    left: -110px;
+    width: 100px;
+}
+
+.help--install-6 {
+    width: 100%;
+    height: calc(100% - 231px);
+    top: 231px;
+}
+
+.help--install-6 .help-text {
+    top: -160px;
+    width: 450px;
+}
+
+.help-box {
+    border: solid 3px red;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.help-text {
+    position: absolute;
+    background: white;
+    border: solid 1px #aaa;
+    padding: 10px;
+}
+
 .float-click {
     position: absolute;
     width: 0px;
@@ -105,12 +305,14 @@ h2 {
 
 #dashboard, #loading {
 	width: 100%;
-	min-height: 444px
+}
+
+#loading {
+    min-height: 444px;
 }
 
 #dashboard {
 	text-align: center;
-    height: 2000px;
 }
 
 .info-form {
@@ -145,14 +347,18 @@ h2 {
     height: 100%;
     width: 100%;
     top: 0;
-    padding: 50px 130px;
     background: rgba(0,0,0,0.5);
     cursor: pointer;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.image-url {
+    position: relative;
+    height: 100%;
 }
 
 #tutorial {
-    background: #eee;
-   	border-right: solid 1px #aaa;
 	height: 100%;
 }
 
@@ -184,14 +390,6 @@ form .radio {
     margin-top: 25px;
 }
 
-.image-url {
-    position: relative;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    padding: 50px;
-}
-
 .image--example {
     height: 100%;
     background-size: contain;
@@ -208,6 +406,7 @@ form .radio {
     padding: 30px 70px;
     position: relative;
     border-top: solid 1px #aaa;
+    background: #fff;
 }
 
 .grid-title {
@@ -217,6 +416,7 @@ form .radio {
 	font-size: 23px;
     text-align: center;
     color: #07a;
+    z-index: 1;
 }
 
 .loading--example {
@@ -236,14 +436,7 @@ form .radio {
 }
 
 .right .next-text {
-	box-shadow: inset -100px 0px 100px -50px #ccc;
-    color: #999;
 	text-align: right;
-}
-
-.right .next-text:hover {
-    box-shadow: inset -100px 0px 100px -50px #aaa;
-    color: #000;
 }
 
 .left {
@@ -251,14 +444,7 @@ form .radio {
 }
 
 .left .next-text {
-	box-shadow: inset 100px 0px 100px -50px #ccc;
-    color: #999;
 	text-align: left;
-}
-
-.left .next-text:hover {
-    box-shadow: inset 100px 0px 100px -50px #aaa;
-    color: #000;
 }
 
 .next-button {
@@ -266,18 +452,30 @@ form .radio {
     cursor: pointer;
     position: absolute;
     height: 100%;
-    width: 30%;
+    width: 40px;
     padding: 0;
+    background: #eee;
+}
+
+.next-button:hover {
+    background: #aaa;
+}
+
+.next-button:hover .next-text {
+    color: #000;
 }
 
 .next-text {
 	display: block;
-	font-weight: 600;
+    font-weight: 600;
     letter-spacing: 2px;
-    font-size: 20px;
     height: 100%;
-    line-height: 85px;
+    font-size: 25px;
+    line-height: 25px;
+    color: #aaa;
     padding: 0 8px;
+    margin-top: calc(-25px / 2);
+    transform: translate(0,50%);
 }
 
 .domainoptions {
@@ -409,5 +607,5 @@ form .radio {
 
 .iframe-wrap {
     overflow: hidden;
-        height: calc(100vh - 231px);
+    height: 100%;
 }

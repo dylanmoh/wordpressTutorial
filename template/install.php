@@ -1,65 +1,76 @@
 <?php
 /* Template Name: install */ 
 get_header();
+if (!empty($_POST['domain'])) {
+	$newURL = 'http://' . $_POST['domain'] . '.com/blog/';
+	header('Location: '. $newURL);
+	echo $newURL;
+	exit();
+}
 ?>
 <script>
 function dashboardInit() {
 	$('#dashboard').show();
 	$('#loading').hide();
-	updateIframe();
 }
 
 </script>
-<h1 class="step-title">Install Wordpress</h1>
+<h1 class="step-title">Creating a New Domain</h1>
 <div class="tutorial-grid">
 	<div class='instructions-wrap'>
 		<span id="instructions">
 		<!-- Options here -->
-			<div class="image-instructions">CLICK "Wordpress" under Applications</div>
-			<div class="image-instructions">CLICK "Install this application"</div>
 			<div class="image-instructions">
-				<div>SCROLL down until you reach Settings</div>
-				<div>INPUT a username under Administrator Username.</div>
-				<div>INPUT a password under Administrator Password.</div>
+				<div>Click "Wordpress" under the Applications section</div>
 			</div>
-			<div class="image-instructions">SCROLL to the bottom and CLICK install</div>
-			<div class="image-instructions">Wait for the install to reach 100%</div>
 			<div class="image-instructions">
-				<form method="post" action="<?php echo 'https://courtneypoulsen.com/blog'; ?>">
-					<h2>You're Done! Proceed to your new site!</h2>
+				<div>Click "install this appliction"</div>
+			</div>
+			<div class="image-instructions">
+				<div>Scroll down to the bottom</div>
+			</div>
+			<div class="image-instructions">
+				<div>Click install</div>
+			</div>
+			<div class="image-instructions">
+				<div>Wait for the install to finish</div>
+			</div>
+			<div class="image-instructions">
+				<form method="post" action="<?php echo get_permalink(); ?>">
+					<div>Enter your domain name</div>
+					<div style="margin-bottom: 10px;"><input name="domain" placeholder="example"></div>
 					<button class="button" type="submit" value="click" name="submit">Continue to your site</button>
 				</form>
 			</div>
 		<!-- End Options here -->
 		</span>
-		<div id="left" class="left next-button"><span class="next-text">Back</span></div>
-		<div id="right" class="right next-button"><span class="next-text">Next</span></div>
+		<div id="left" class="left next-button"><span class="next-text"><</span></div>
+		<div id="right" class="right next-button"><span class="next-text">></span></div>
 	</div>
-	<span class="grid-title"><span class="hint">Hint?</span></span>
+	<span class="grid-title"><span class="hint">Help</span></span>
 	<div class="image-wrap">
 		<div id="tutorial">
 				<div class="image-url">	
-					<span>Look for the Applications area, and Wordpress will be the first item listed</span>
-					<div class="image--example" style="background-image: url('<?php echo get_attachment_url_by_slug('step4-1'); ?>');"></div>
+					<div class='help-box help--install-1'><div class="help-text">Click here</div></div>
 				</div>
 				<div class="image-url">	
-					<div class="image--example" style="background-image: url('<?php echo get_attachment_url_by_slug('step4-2'); ?>');"></div>
+					<div class='help-box help--install-2'><div class="help-text">Click here</div></div>
 				</div>
 				<div class="image-url">	
-					<span>Under the settings area, there will be 2 text boxes to input username and password</span>
-					<div class="image--example" style="background-image: url('<?php echo get_attachment_url_by_slug('step4-3'); ?>');"></div>
+					<div class='help-box help--install-4'><div class="help-text">After you've scrolled down, Click Next</div></div>
+					<div class='help-box help--install-3'><div class="help-text">Make sure to hover over this area before you scroll down</div></div>
 				</div>
 				<div class="image-url">	
-					<div class="image--example" style="background-image: url('<?php echo get_attachment_url_by_slug('step4-4'); ?>');"></div>
+					<div class='help-box help--install-5'><div class="help-text">Click here</div></div>
 				</div>
 				<div class="image-url">	
-					<span>Wait for this to reach 100%</span>
-					<div class="image--example" style="background-image: url('<?php echo get_attachment_url_by_slug('step4-5'); ?>');"></div>
+					<div class='help-box help--install-4'><div class="help-text">After the install is complete, Click Next</div></div>
+					<div class='help-box help--install-6'><div class="help-text">Wait for this bar to reach 100%<img class="install-image" src="<?php echo get_attachment_url_by_slug('step4-5'); ?>"></div></div>
 				</div>
 		</div>
 	</div>
 	<div id="loading" style="background-image: url(<?php echo get_attachment_url_by_slug('loading'); ?>)"></div>
-	<div class="iframe-wrap"><div class="float-click"></div><iframe onload="dashboardInit()" id="dashboard" src="https://domains.byu.edu/dashboard/#domains-header" scrolling="no"></iframe></div>
+	<div class="iframe-wrap"><div class="float-click"></div><iframe onload="dashboardInit()" id="dashboard" src="https://domains.byu.edu/dashboard/#domains-header"></iframe></div>
 </div>
 <script>
 let imageIndex = 0;
@@ -74,11 +85,6 @@ wrap.hide();
 updateImage();
 
 let floatClick = $('.float-click');
-let slide = ['230', '350', '350', '350', '450'];
-let floatw = ['135px', '207px', '0px', '0px', '0px'];
-let floath = ['47px', '43px', '0px', '0px', '0px'];
-let floatl = ['80px', 'calc(100% - 250px)', '0px', '0px', '0px'];
-let floatt = ['60px', '20px', '0px', '0px', '0px'];
 
 var myConfObj = {
   iframeMouseOver : false
@@ -86,7 +92,7 @@ var myConfObj = {
 window.addEventListener('blur',function(){
   if(myConfObj.iframeMouseOver){
   	console.log("CLICK")
-  	floatClick.hide();
+  	wrap.hide();
   }
 });
 
@@ -108,15 +114,10 @@ function updateImage() {
 			images.hide();
 			$(images[imageIndex]).show();
 		}
-}
-
-function updateIframe() {
-	$('#dashboard').css('margin-top','-' + slide[imageIndex] + 'px');
-	$('.float-click').css('margin-top', floatt[imageIndex]);
-	$('.float-click').css('margin-left', floatl[imageIndex]);
-	$('.float-click').css('width', floatw[imageIndex]);
-	$('.float-click').css('height', floath[imageIndex]);
-	floatClick.show();
+		if (imageIndex == 6 || imageIndex == 7) {
+		}
+		else {
+		}
 }
 
 $('#right').click( function() {
@@ -126,7 +127,6 @@ $('#right').click( function() {
 	}
 	$('#left').show();
 	updateImage();
-	updateIframe();
 });
 
 $('#left').click( function() {
@@ -136,12 +136,20 @@ $('#left').click( function() {
 	}
 	$('#right').show();
 	updateImage();
-	updateIframe();
 });
 hint.click(function () {
 	wrap.show();
 });
 wrap.click( function () {
+	wrap.hide();
+});
+$('.step-title').click( function () {
+	wrap.hide();
+});
+$('.instructions-wrap').click( function () {
+	wrap.hide();
+});
+$('#loading').click( function () {
 	wrap.hide();
 });
 </script>

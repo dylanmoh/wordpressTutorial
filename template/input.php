@@ -9,7 +9,7 @@ get_header();
 		<!-- Options here -->
 			<form class="collect-form" method="post" action="<?php echo get_site_url() . '/register'; ?>">
 				<div class="image-instructions" style="display: grid; grid-template-columns: 50% 50%;">
-					<h2>If this is your first BYU domain website</h2>
+					<h2>If this is your first BYU domain</h2>
 					<h2>If you already have a BYU domain</h2>
 					<button style="width: fit-content; margin: auto;" id="subForm" class="button" type="submit" value="click" name="submit" >Create Domain</button>
 					<button style="width: fit-content; margin: auto;" id="secondForm" class="button" type="submit" value="click" name="submit" >Install Wordpress</button>
@@ -24,8 +24,8 @@ get_header();
 	<div class="image-wrap">
 		<div id="tutorial">
 				<div class="image-url">	
-					<div>If you are unsure which option to choose, then this is most likely your first domain. Please create a domain</div>
-					<div class="image--example" style="background-image: url('<?php echo get_attachment_url_by_slug('step2-2'); ?>');"></div>
+					<div class='help-box help--input-1'><div class="help-text">For first time users. This option is for those who have never used BYU domains before. It will instruct you on how to create a new domain, as well as install Wordpress</div></div>
+					<div class='help-box help--input-2'><div class="help-text">For users who own a BYU domain. This option will instruct you on how to install Wordpress for your current BYU domain</div></div>
 				</div>
 		</div>
 	</div>
@@ -81,6 +81,12 @@ hint.click(function () {
 	wrap.show();
 });
 wrap.click( function () {
+	wrap.hide();
+});
+$('.step-title').click( function () {
+	wrap.hide();
+});
+$('.instructions-wrap').click( function () {
 	wrap.hide();
 });
 </script>

@@ -7,33 +7,32 @@ get_header();
 	<div class='instructions-wrap'>
 		<span id="instructions">
 		<!-- Options here -->
-				<div class="image-instructions"><div>This is where instructions will be provided</div><div>Clicking next will show the Next instruction</div></div>
-				<div class="image-instructions">This site provides instructions, but you will interact with another site (BYU Domains) below</div>
+				<div class="image-instructions"><div>This is where you'll find instructions</div><div>Click the arrow on the right to receive the next instruction</div></div>
+				<div class="image-instructions"><div>Below the Help button is a portal to BYU Domains</div><div>These instructions will tell you how to navigate BYU Domains</div></div>
+				<div class="image-instructions"><div>BYU domains sometimes has trouble loading</div><div>If the portal endlessly loads, refresh the page</div></div>
 				<div class="image-instructions">
 					<form method="post" action="<?php echo get_site_url() . '/input'; ?>">
-						<h2>This site allows you to create a new domain with BYU Domains</h2>
-						<h2>Once you have a domain, this site will then instruct you on how to install wordpress</h2>
-						<button class="button" type="submit" value="click" name="submit">Continue</button>
+						<div>Now that you understand how the site works</div>
+						<button class="button" type="submit" value="click" name="submit">Let's get started</button>
 					</form>
 				</div>
 		<!-- End Options here -->
 		</span>
-		<div id="left" style="width: 13%;" class="left next-button"><span class="next-text">Back</span></div>
-		<div id="right" class="right next-button"><span class="next-text">Next</span></div>
+		<div id="left" class="left next-button"><span class="next-text"><</span></div>
+		<div id="right" class="right next-button"><span class="next-text">></span></div>
 	</div>
-	<span class="grid-title"><span class="hint">Hint?</span></span>
+	<span class="grid-title"><span class="hint">Help</span></span>
 	<div class="image-wrap">
 		<div id="tutorial">
 				<div class="image-url">	
-					<span>The Next button looks like this.</span>
-					<div>Click anywhere to close Hint Box, and then click Next to move on</div>	
-					<div class="next-button--example right next-button"><span class="next-text">Next</span></div>
+					<div class='help-box help--explanation-1'><div class="help-text">Here is the Next button</div></div>
 				</div>
 				<div class="image-url">	
-					<span>Sometimes BYU domains has trouble loading</span>
-					<div>Refresh the page if the loading icon doesn't go away</div>
-					<div>Below is what the icon looks like</div>
-					<div class="loading--example" style="background-image: url(<?php echo get_attachment_url_by_slug('loading'); ?>)"></div>
+					<div class='help-box help--explanation-1'><div class="help-text">Click Next when ready</div></div>
+					<div class='help-box help--explanation-2'><div class="help-text">Here is where the portal will be</div></div>
+				</div>
+				<div class="image-url">	
+					<div class='help-box help--explanation-1'><div class="help-text">Click Next when ready</div></div>
 				</div>
 		</div>
 	</div>
@@ -51,12 +50,6 @@ $('.left').hide();
 wrap.hide();
 updateImage();
 function updateImage() {
-		if (imageIndex == 1) {
-			$('#loading').show();
-		}
-		else {
-			$('#loading').hide();
-		}
 		tutorialInstructions.hide();
 		$(tutorialInstructions[imageIndex]).show();
 		if (imageIndex == images.length) {
@@ -93,6 +86,15 @@ hint.click(function () {
 	wrap.show();
 });
 wrap.click( function () {
+	wrap.hide();
+});
+$('.step-title').click( function () {
+	wrap.hide();
+});
+$('.instructions-wrap').click( function () {
+	wrap.hide();
+});
+$('.explain1-1').click( function () {
 	wrap.hide();
 });
 </script>
